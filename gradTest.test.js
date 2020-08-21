@@ -15,7 +15,7 @@ function createMenuData(data) {
     }
 
     if (Object.keys(expectedResults).indexOf(parent)==-1) {
-      var parent_child={"title": parent, "data": [child]}   
+      var parent_child={title: parent, data: [child]}   
       expectedResults[parent] = parent_child;
     } else { 
         expectedResults[parent]["data"].push(child);
