@@ -10,30 +10,31 @@ const data = [
   ];
 
 function createMenuData(data) {
-    var expectedResults = {};
+    var result_data = {};
   
     for (var i=0; i<data.length; i++){
-      split_results = data[i].split('/');
-   
-      if (split_results.length > 1){
+        split_results = data[i].split('/');
+        console.log(data[i])
+        console.log(split_results)
+        //Skips this iteration of the loop there is no child listed.
+        if (split_results.length < 2 ){
+          continue;
+        }
+    
           parent = split_results[0];
           child = split_results[1];
+        console.log(parent)
+        console.log(child)
+
+        if (Object.keys(result_data).indexOf(parent)==-1) {
+          var parent_child={title: parent, data: [child]}   
+          result_data[parent] = parent_child;
+        } else { 
+            result_data[parent]["data"].push(child);
+          }
       }
   
-      //Skips this iteration of the loop there is no child listed.
-      if (split_results.length == 1){
-        continue;
-      }
-  
-      if (Object.keys(expectedResults).indexOf(parent)==-1) {
-        var parent_child={title: parent, data: [child]}   
-        expectedResults[parent] = parent_child;
-      } else { 
-          expectedResults[parent]["data"].push(child);
-        }
-    }
-  
-    return Object.values(expectedResults);
+    return Object.values(result_data);
   }
 
 console.log(createMenuData(data))
