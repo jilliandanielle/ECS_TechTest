@@ -3,13 +3,13 @@
 You will find my solution in [gradTest.test.js]
 
 ## Setup
-Use 'git clone' to clone this repository to your local machine
+Use `git clone` to clone this repository to your local machine
 
 Install yarn or npm globally
 
-Run 'yarn' or 'npm install'
+Run `yarn` or `npm install`
 
-Use the test runner 'jest' to run gradTest.test.js
+Use the test runner `jest` to run gradTest.test.js
 
 *(Spoiler Alert: the test passes!)*
 
